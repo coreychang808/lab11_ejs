@@ -6,11 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <link href= "/public/styles/base.css" rel="stylesheet" type="text/css" />
+  <link href= "/public/styles/reset.css" rel="stylesheet" type="text/css" />
+  <!-- <link href= "/public/assets/styles.css" rel="stylesheet" type="text/css" />
+  <link href= "/public/assets/styles.css" rel="stylesheet" type="text/css" />
+  <link href= "/public/assets/styles.css" rel="stylesheet" type="text/css" /> -->
 </head>
 
 <body>
   <% searchResults.forEach(item => { %>
   <p><%= item.title %></p>
+  <img src= "<%= item.image %>" />
+  <p><%= item.authors %></p>
+  <p><%= item.decription %></p>
   <% }) %>
 </body>
 

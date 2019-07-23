@@ -25,9 +25,10 @@ app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
 
 // HELPER FUNCTIONS
 function Book(info) {
-  const placeholderImage = 'https://i.imgur.com/J5LVHEL.jpg';
+  this.image = info.imageLinks.thumbnail.replace(/^http:\/\//i, 'https://') || "https://www.fillmurray.com/640/360";
   this.title = info.title;
   this.authors = info.authors;
+  this.decription = info.description;
 }
 
 // Note that .ejs file extension is not required
