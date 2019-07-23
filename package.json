@@ -1,0 +1,25 @@
+{
+  "name": "views",
+  "version": "1.0.0",
+  "description": "book app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coreychang808/lab11_ejs.git"
+  },
+  "author": "corey",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/coreychang808/lab11_ejs/issues"
+  },
+  "homepage": "https://github.com/coreychang808/lab11_ejs#readme",
+  "dependencies": {
+    "ejs": "^2.6.2",
+    "express": "^4.17.1",
+    "superagent": "^5.1.0"
+  }
+}
