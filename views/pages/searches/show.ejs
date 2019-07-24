@@ -16,6 +16,7 @@
 <body>
   <% searchResults.forEach(item => { %>
   <p><%= item.title %></p>
+  <p><% item.isbn %></p>
   <img src= "<%= item.image %>" />
   <p><%= item.authors %></p>
   <p><%= item.decription %></p>
