@@ -3,23 +3,23 @@
 
 <head>
   <title>Book Collection</title>
-  <link href= "/public/styles/base.css" rel="stylesheet" type="text/css" />
-  <link href= "/public/styles/reset.css" rel="stylesheet" type="text/css" />
-  <!-- <link href= "/public/assets/styles.css" rel="stylesheet" type="text/css" />
-  <link href= "/public/assets/styles.css" rel="stylesheet" type="text/css" />
-  <link href= "/public/assets/styles.css" rel="stylesheet" type="text/css" /> -->
+  <%- include('../layout/head') %>
 </head>
 <body>
-  <main>
-      <% searchResults.forEach(item => { %>
-        <p><%= item.title %></p>
-        <p><% item.isbn %></p>
-        <img src= "<%= item.image %>" />
-        <p><%= item.authors %></p>
-        <p><%= item.decription %></p>
-        <p><% item.bookshelf %></p>
-        <% }) %>
-  </main>
+    <%- include('../layout/header') %>
+    <main>
+        <h4>Saved Books</h4>
+        <p><%= books.length %> books in the Collection</p>
+        <ul id="book-list">
+          <% books.forEach(book => { %>
+            <li class="book-items" data-book-id="<%= book.id %>">
+              <%- include('books/details', {book: book}) %>
+              <p class="detail-button"><a href="/books/<%= book.id %>">View Details</a></p>
+            </li>
+          <% }) %>
+        </ul>
+      </main>
+      <%- include('../layout/footer') %>
 </body>
 
 </html>
