@@ -40,27 +40,14 @@ app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
 
 // HELPER FUNCTIONS
 function Book(info) {
-  this.image = info.imageLinks.thumbnail.replace(/^http:\/\//i, 'https://') || "https://www.fillmurray.com/640/360";
   this.title = info.title? info.title : 'No title available';
-  this.isbn = info.industryIdentifiers[0].indentifier;
   this.authors = info.authors? info.authors : 'No authors available';
+  this.isbn = info.industryIdentifiers[0].indentifier;
   this.decription = info.description? info.description: 'No description available';
+  this.image = info.imageLinks.thumbnail.replace(/^http:\/\//i, 'https://') || "https://www.fillmurray.com/640/360";
+  this.id = info.industryIdentifiers ? `${info.industryIdentifiers[0].indentifier}` : '';
 }
 
-// instance method: saving to a db
-
-// Book.prototype.save = function () {
-  //   let SQL = `
-  //     INSERT INTO books
-  //       (image,title,authors,decription) 
-  //       VALUES($1,$2,$3,$4) 
-//       RETURNING id
-//   `;
-//   let values = Object.values(this);
-//   return client.query(SQL, values);
-// };
-
-//bookshelf function
 
 function getBookShelf (request, response) {
   let SQL = `SELECT * FROM books`;

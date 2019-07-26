@@ -12,13 +12,13 @@
       <ul class="search-results">
         <% results.forEach(book => { %>
           <li data-book-id="<%= book.isbn %>">
-            <%- include('../books/detail', {book: book}) %>
+            <%- include('../books/details', {book: book}) %>
             <button class="select-button">Select This Book</button>
             <form class="hide-me" action="/books" method="post">
               <input type="text" name="title" value="<%= book.title %>" required>
               <input type="text" name="author" value="<%= book.author %>" required>
               <input type="text" name="isbn" value="<%= book.isbn %>">
-              <input type="text" name="image_url" value="<%= book.image_url %>">
+              <input type="text" name="image_url" value="<%= book.image %>">
               <textarea name="description" value="<%= book.description %>" cols="30" rows="5"><%= book.description %></textarea>
               <p>Enter a bookshelf name</p>
               <input type="text" name="bookshelf" required>
